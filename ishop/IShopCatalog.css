@@ -1,0 +1,44 @@
+.IShopCatalog {  
+    padding: 20px 15% 20px;
+    min-width: fit-content;
+}
+
+.IShopCatalog > .Name {
+    padding: 30px 0px 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Montserrat, sans-serif;
+    font-size: 25 px;
+}
+
+.IShopCatalog > .Table {
+    display: table;
+    width: 100%;
+}
+
+.IShopCatalog > .Table > .Row {
+    display: table-row;
+    background-color: LightBlue;
+    color: MidnightBlue;
+}
+
+.IShopCatalog > .Table > .Row:nth-child(even) {
+    background-color: white;
+}
+
+.IShopCatalog > .Table > .Row  > .Cell {
+    display: table-cell;
+    padding: 5px 10px;
+}
+
+.IShopCatalog > .Table > .Row.Header {
+    background-color: MidnightBlue;
+    text-align: center;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 14 px;
+}
+
+.IShopCatalog > .Table > .Row > .Column-id {
+    font-weight: bold;
+}
