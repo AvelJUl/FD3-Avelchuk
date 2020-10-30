@@ -37,7 +37,8 @@ var IShopCatalog = React.createClass({
     },
 
     render: function() {
-        return React.DOM.div( { className: 'IShopCatalog' },
+        return React.DOM.div( 
+            { className: 'IShopCatalog' },
             React.DOM.div(
                 { className: 'Name' }, 
                 this.props.shopName 
