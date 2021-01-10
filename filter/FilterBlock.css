@@ -1,0 +1,16 @@
+.FilterBlock {  
+    padding: 20px 10% 20px;
+    min-width: fit-content;
+}
+
+.FilterBlock > .ControllBlock {
+    padding: 0 0 10px;
+}
+
+.FilterBlock > .ControllBlock > .ControllBlockElement {
+    margin: 3px 3px 0;
+}
+
+.FilterBlock > .FilteredBlock > .FilteredBlockElement {
+    min-width: 300px;
+}

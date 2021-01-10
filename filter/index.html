@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8" />
+    <title>Фильтрация</title>
+</head> 
+<body> 
+    <div id="container"></div> 
+        
+    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+        
+    <script src="FilterBlock.js"></script>
+    <link rel="stylesheet" type="text/css" href="FilterBlock.css" />
+
+    <script>
+
+        var stringArray=[ 
+            'суперархиэкстраультрамегаграндиозно', 
+            'деградационно-паразитарных', 
+            'сельскохозяйственными', 
+            'межправительственная', 
+            'позднеиндустриальный', 
+            'переориентироваться', 
+            'низкотемпературный', 
+            'природоохранных', 
+            'дополнительными', 
+            'пространственно',           
+        ];
+
+        ReactDOM.render(
+            React.createElement(
+                FilterBlock,
+                { stringArray: stringArray, }
+            ), 
+            document.getElementById('container') 
+        );
+
+    </script>
+
+</body> 
+</html>
