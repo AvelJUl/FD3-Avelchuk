@@ -1,9 +1,9 @@
 var tableFields = {
-    id: { name: 'ID', reactType: React.PropTypes.isRequired },
-    itemName: { name: 'Name', reactType: React.PropTypes.string.isRequired },
-    itemPrice: { name: 'Price', reactType: React.PropTypes.number },
-    itemImageUrl: { name: 'Image URL', reactType: React.PropTypes.string },
-    itemStorehouseQuantity: { name: 'Quantity', reactType: React.PropTypes.number },
+    id: 'ID',
+    itemName: 'Name', 
+    itemPrice: 'Price',
+    itemImageUrl: 'Image URL',
+    itemStorehouseQuantity: 'Quantity',
 };
 
 var IShopCatalog = React.createClass({
@@ -20,20 +20,14 @@ var IShopCatalog = React.createClass({
     propTypes: {
         shopName: React.PropTypes.string.isRequired,
         products: React.PropTypes.arrayOf( 
-            React.PropTypes.shape(
-                Object.fromEntries( 
-                    Object.entries( tableFields ).filter(
-                        function ( [ , fieldProps ] ) {
-                            return fieldProps.hasOwnProperty('reactType');
-                        }
-                    ).map( 
-                        function ( [ fieldName, fieldProps ] ) {
-                            return [ fieldName, fieldProps.reactType ];
-                        } 
-                    ) 
-                )
-            ) 
-        ).isRequired,
+            React.PropTypes.shape({
+                id: React.PropTypes.number.isRequired,
+                itemName: React.PropTypes.string.isRequired,
+                itemPrice: React.PropTypes.number.isRequired,
+                itemImageUrl: React.PropTypes.string.isRequired,
+                itemStorehouseQuantity: React.PropTypes.number.isRequired,
+            }) 
+        ),
     },
 
     render: function() {
@@ -48,9 +42,7 @@ var IShopCatalog = React.createClass({
                 React.DOM.div( 
                     { className: 'Row Header' }, 
                     Object.entries( tableFields ).map( 
-                        function ( [ fieldName, fieldProps ] ) {
-                            return React.DOM.div( { key: fieldName, className: `Cell Header-Cell Column-${fieldName}` }, fieldProps.name );
-                        } 
+                        (field, fieldHeader) =>  React.DOM.div( { key: field, className: `Cell Header-Cell Column-${field}` }, fieldHeader )
                     ) 
                 ),
                 this.props.products.map( 
@@ -58,9 +50,7 @@ var IShopCatalog = React.createClass({
                         return React.DOM.div( 
                             { key: product.id, className: 'Row' }, 
                             Object.keys( tableFields ).map( 
-                                function ( fieldName ) {
-                                    return React.DOM.div( { key: fieldName, className: `Cell Column-${fieldName}` }, product[fieldName] );
-                                } 
+                                field => React.DOM.div( { key: field, className: `Cell Column-${field}` }, product[field] )
                             )
                         );
                     }
