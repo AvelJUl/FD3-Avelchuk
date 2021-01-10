@@ -1,0 +1,40 @@
+﻿﻿
+
+
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8" />
+    <title>IShop Catalog</title>
+</head> 
+<body> 
+    <div id="catalog-container"></div> 
+      
+    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+      
+    <script src="IShop.js"></script>
+    <link rel="stylesheet" type="text/css" href="IShop.css" />
+    <script src="IShopProduct.js"></script>
+    <link rel="stylesheet" type="text/css" href="IShopProduct.css" />
+
+    <script>
+
+        const SHOP_NAME = "IShop";
+        const Products = [
+            {id: 1, itemName: "Royal Canin Kitten", itemPrice: 6.54, itemImageUrl: "http://ishop/static/image/catalog/Royal-Canin-Kitten.jpg", itemStorehouseQuantity: 32 },
+            {id: 2, itemName: "Royal Canin Kitten Sterilised", itemPrice: 8.57, itemImageUrl: "http://ishop/static/image/catalog/Royal-Canin-Kitten-Sterilised.jpg", itemStorehouseQuantity: 41 },
+            {id: 3, itemName: "Royal Canin British Shorthair Kitten", itemPrice: 10.29, itemImageUrl: "http://ishop/static/image/catalog/Royal-Canin-British-Shorthai-Kitten.jpg", itemStorehouseQuantity: 27 },
+            {id: 4, itemName: "Hills Science Plan для котят (курица)", itemPrice: 7.29, itemImageUrl: "http://ishop/static/image/catalog/Hills-Science-Plan.jpg", itemStorehouseQuantity: 53 },
+        ];
+
+        ReactDOM.render(
+            React.createElement(IShop, { shopName: SHOP_NAME, products: Products }),
+            document.getElementById('catalog-container')
+        );
+
+  </script>
+
+</body> 
+</html>

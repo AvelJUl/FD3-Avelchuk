@@ -42,7 +42,7 @@ var IShopCatalog = React.createClass({
                 React.DOM.div( 
                     { className: 'Row Header' }, 
                     Object.entries( tableFields ).map( 
-                        (field, fieldHeader) =>  React.DOM.div( { key: field, className: `Cell Header-Cell Column-${field}` }, fieldHeader )
+                        ( [field, fieldHeader] ) =>  React.DOM.div( { key: field, className: `Cell Header-Cell Column-${field}` }, fieldHeader )
                     ) 
                 ),
                 this.props.products.map( 
