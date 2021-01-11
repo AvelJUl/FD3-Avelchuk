@@ -1,0 +1,26 @@
+.IShopProduct {
+    display: table-row;
+    background-color: LightBlue;
+    color: MidnightBlue;
+}
+
+.IShopProduct:nth-child(even) {
+    background-color: white;
+}
+
+.IShopProduct  > .Cell {
+    display: table-cell;
+    padding: 5px 10px;
+}
+
+.IShopProduct > .Column-id {
+    font-weight: bold;
+}
+
+.IShopProduct.Selected {
+    background-color: rebeccapurple;
+}
+
+.IShopProduct > .Column-delete {
+    margin: 10px 0px 10px;
+}
